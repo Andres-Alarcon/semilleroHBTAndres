@@ -7,8 +7,8 @@ package com.hbt.semillero.entidades;
  * <b>Descripción:<b> Esta clase se encarga de representar los dos 
  * posibles estados que maneja un estado de un comic
  * <b>Caso de Uso:<b> 
- * @author Laura Elizabeth Castellanos Ducon
- * @version 
+ * @author Andres Felipe Alarcon Fonseca
+ * 
  */
 public enum EstadoEnum {
 	ACTIVO ("enum.estado.activo"),

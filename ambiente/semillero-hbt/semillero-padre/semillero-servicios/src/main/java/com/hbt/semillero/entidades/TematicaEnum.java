@@ -4,9 +4,9 @@
 package com.hbt.semillero.entidades;
 
 /**
- * <b>Descripción:<b> Clase que determina
+ * <b>Descripción:<b> 
  * <b>Caso de Uso:<b> 
- * @author Usuario
+ * @author Andres Felipe Alarcon Fonseca
  * @version 
  */
 public enum TematicaEnum {

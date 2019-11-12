@@ -158,5 +158,18 @@ public class AppTest {
 	public void agregarComicDTOLista() {
 
 	}
-
+	@Test
+	public void probarComparacionStrings() {
+		String s1 = "street";
+		String s2;
+		
+		s2 = new String("street");
+		
+		if (s1 == s2) {
+			System.out.println("Entra al if");
+		}
+		else if (s1.equals(s2)) {
+			System.out.println("Entra a equals");
+		}
+	}
 }
