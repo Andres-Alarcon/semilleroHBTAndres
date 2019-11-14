@@ -86,4 +86,16 @@ public class EjerciciosPOJOTest {
 		//Se comprueba el tamaño de la lista
 		Assert.assertEquals(ep.getNumeros().size(), 4);
 	}
+	//Metodo que prueba los metodos implementados en POJO para validar el ganador de una partida de tennis
+	@Test public void ejercicioSiete() {
+		
+		//Se cargan los valores de prueba
+		ep.cargarPuntajes("Roger Federer", 3);
+		ep.cargarPuntajes("Dominic Thiem", 6);
+		ep.cargarPuntajes("Roger Federer", 2);
+		ep.cargarPuntajes("Dominic Thiem", 6);
+		
+		
+		Assert.assertEquals(ep.definirGanador(), "Gano el jugador Dominic");
+	}
 }

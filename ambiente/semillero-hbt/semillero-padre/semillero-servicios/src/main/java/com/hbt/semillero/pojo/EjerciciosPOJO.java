@@ -5,11 +5,46 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.HashMap;
+import java.util.Map;
 
 public class EjerciciosPOJO {
 
 	//Array que almacena los datos
 	private ArrayList<Integer> numeros = new ArrayList<Integer>();
+	
+	//Mapa que almacenara los respectivos puntajes
+	private Map<String, Integer> marcadores = new HashMap<String, Integer>();
+	
+	//Metodo que carga los respectivos puntajes al mapa
+	public void cargarPuntajes(String nombreJugador, int puntaje) {
+		marcadores.put(nombreJugador, puntaje);
+	}
+	
+	//Metodo que realiza la validacion del ganador, de acuerdo a los datos ya cargados
+	public String definirGanador() {
+		
+		int puntajeFederer=0;
+		int puntajeThiem=0;
+		
+		//For para iterar sobre el mapa
+		for (Map.Entry<String, Integer> entry : marcadores.entrySet()) {
+			
+			if (entry.getKey().equals("Roger Federer")) {
+				puntajeFederer = puntajeFederer + entry.getValue();
+			}
+			else if (entry.getKey().equals("Dominic Thiem")) {
+				puntajeThiem = puntajeThiem + entry.getValue();
+			}
+		}
+		if (puntajeFederer>puntajeThiem) {
+			return "Gano el jugador Federer";
+		}
+		else {
+			return "Gano el jugador Dominic";
+		}
+	}
+	
 	
 	public boolean validarPrimos(int numero) {
 		
