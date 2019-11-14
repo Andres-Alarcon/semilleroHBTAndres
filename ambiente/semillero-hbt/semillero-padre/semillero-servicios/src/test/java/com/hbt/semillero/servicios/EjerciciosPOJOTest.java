@@ -1,5 +1,8 @@
 package com.hbt.semillero.servicios;
 
+import java.time.LocalDate;
+import java.time.Month;
+
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -34,7 +37,7 @@ public class EjerciciosPOJOTest {
 	}
 	*/
 	
-	
+	/*
 	@Test
 	public void ejercicioTres() {
 		
@@ -42,5 +45,45 @@ public class EjerciciosPOJOTest {
 		Assert.assertTrue(ep.validarPrimos(222));
 		Assert.assertTrue(ep.validarPrimos(0));
 		
+	}*/
+	/*
+	 * Metodo que llama el metodo del POJO validar Edad, y le asigan los parametros de prueba
+	 * */
+	/*
+	@Test
+	public void ejericioCuatro() {
+		Assert.assertTrue(ep.validarEdad(LocalDate.of(1995, Month.SEPTEMBER,6), 24L));
+	}
+	*/
+	
+	//Metodo que prueba, agregar los numeros, verificar el menor y el mayor, y el tamaño del array
+	@Test
+	public void ejercicioCinco() {
+		
+		//Se cargan los datos
+		ep.ingresarDatos(50);
+		ep.ingresarDatos(1);
+		ep.ingresarDatos(249);
+		ep.ingresarDatos(-2);
+		
+		//Se prueba que no este nulo
+		Assert.assertNotNull(ep.getNumeros());
+		
+		//Se imprime la lista
+		System.out.println(ep.getNumeros().toString());
+		
+		//Se ordena la lista
+		ep.ordenar();
+		
+		//Se imprime la lista ya ordenada
+		System.out.println(ep.getNumeros().toString());
+		
+		//Se prueba que el primer elemento es -2
+		Assert.assertEquals(ep.getNumeros().get(0).toString(),"-2");
+		//Se prueba que el ultimo es 249
+		Assert.assertEquals(ep.getNumeros().get(3).toString(),"249");
+		
+		//Se comprueba el tamaño de la lista
+		Assert.assertEquals(ep.getNumeros().size(), 4);
 	}
 }

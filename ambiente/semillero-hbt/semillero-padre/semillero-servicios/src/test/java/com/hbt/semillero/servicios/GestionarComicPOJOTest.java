@@ -20,6 +20,7 @@ public class GestionarComicPOJOTest {
 	/**
 	 * 
 	 * */
+	/*
 	@Test(enabled = false)
 	public void crearComicDTO() {
 		GestionarComicPOJO gestionarComicPOJO = new GestionarComicPOJO();
@@ -29,7 +30,9 @@ public class GestionarComicPOJOTest {
 																			// isEmpty()
 		Assert.assertTrue(!gestionarComicPOJO.getListaComics().isEmpty());
 	}
-
+	*/
+	
+	/*
 	@Test
 	public void crearComicDTOTest() {
 		GestionarComicPOJO gestionarComicPOJO = new GestionarComicPOJO();
@@ -74,6 +77,7 @@ public class GestionarComicPOJOTest {
 		 * a El maravilloso hombre araña v2 USA
 		 * Si la modificacion es satisfactoria la prueba no deberia presentar ningun error
 		 * */
+		/*
 		Assert.assertEquals(gestionarComicPOJO.getListaComics().get(2).getNombre(), "The Spectacular Spider-Man v2 USA");
 		gestionarComicPOJO.modificarComicDTO("102", "El maravilloso hombre araña v2 USA");
 		Assert.assertEquals(gestionarComicPOJO.getListaComics().get(2).getNombre(), "El maravilloso hombre araña v2 USA");
@@ -84,9 +88,10 @@ public class GestionarComicPOJOTest {
 		 * "Captain America Corps 1-5 USA", posteriormente eliminarlo y proceder a validar el nombre de la primera
 		 *  posicion que si el eliminarlo fue correcto, deberia ser equivalente a: "Dragon Ball Yamcha"
 		 *  De funcionar correctamente la prueba sera satisfactoria
-		 * */
+		 * *//*
 		Assert.assertEquals(gestionarComicPOJO.getListaComics().get(0).getNombre(), "Captain America Corps 1-5 USA");
 		gestionarComicPOJO.deleteComicDTO("101");
 		Assert.assertEquals(gestionarComicPOJO.getListaComics().get(0).getNombre(), "Dragon Ball Yamcha");
-	}
+		
+	}*/
 }

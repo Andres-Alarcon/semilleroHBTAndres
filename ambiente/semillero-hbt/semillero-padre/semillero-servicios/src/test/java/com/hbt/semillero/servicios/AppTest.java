@@ -26,6 +26,7 @@ public class AppTest {
 	 * Metodo que permite validar si dada la suma de dos numero el resultado es el
 	 * correcto
 	 */
+	/*
 	@Test(enabled = false)
 	public void primeraPU() {
 		Long resultadoEsperado = 2159L;
@@ -34,7 +35,7 @@ public class AppTest {
 		Long resultado = sumando1 + sumando2;
 		Assert.assertEquals(resultado, resultadoEsperado);
 	}
-
+	*/
 	/**
 	 * 
 	 * Metodo encargado de dada una cadena invertir su posicion y retornarla al
@@ -59,6 +60,7 @@ public class AppTest {
 	 * Uso</b>
 	 *
 	 */
+	/*
 	@Test(enabled = false)
 	public void invertirCadenaTest() {
 		String resultado = invertirCadena("Yo soy");
@@ -66,11 +68,12 @@ public class AppTest {
 		String esperado = "Yo soy".toUpperCase().trim();
 		Assert.assertEquals(actual.replace(" ", ""), esperado.replace(" ", ""));
 	}
-
+	 */
 	/**
 	 * metodo para validar si la cadena invertida es la correcta
 	 * 
 	 */
+	/*
 	@Test(enabled = false)
 	public void testInvert() {
 		String word = "laura";
@@ -87,10 +90,11 @@ public class AppTest {
 		Assert.assertEquals(invertirCadena(word), resultadoEsperado3);
 		Assert.assertEquals(invertirCadena(word), resultadoEsperado3);
 	}
-
+	*/
 	/**
 	 * método que use el método ToString de la entidad comic
 	 */
+	/*
 	@Test(enabled = false)
 	public void testToString() {
 		Comic comic = new Comic();
@@ -102,10 +106,11 @@ public class AppTest {
 		Assert.assertEquals(comic.getNumeroPaginas().toString(), numeroDosPrueba);
 		Assert.assertEquals(comic.getNumeroPaginas().toString(), numeroTresPrueba);
 	}
-
+	*/
 	/**
 	 * Este metodo se encargara de probar el enumerado de EstadoEnum
 	 */
+	/*
 	@Test(enabled = false)
 	public void testEstadoEnum() {
 
@@ -118,10 +123,11 @@ public class AppTest {
 		String variableInactiva = "INACTIVO";
 		Assert.assertEquals(estado2, variableInactiva);
 	}
-
+	*/
 	/**
 	 * Devolver un entero con la posición del enum según está declarada
 	 */
+	/*
 	@Test(enabled = false)
 	public int posisionEnum(int position) {
 		EstadoEnum estado1 = EstadoEnum.ACTIVO;
@@ -134,7 +140,7 @@ public class AppTest {
 		Assert.assertEquals(listaEnum.get(1), position);
 		return position;
 	}
-
+	*/
 	/*
 	 * devolver un array con todos los enum
 	 */
@@ -154,6 +160,7 @@ public class AppTest {
 	/**
 	 * se evaluara
 	 */
+	/*
 	@Test
 	public void agregarComicDTOLista() {
 
@@ -171,5 +178,5 @@ public class AppTest {
 		else if (s1.equals(s2)) {
 			System.out.println("Entra a equals");
 		}
-	}
+	}*/
 }
