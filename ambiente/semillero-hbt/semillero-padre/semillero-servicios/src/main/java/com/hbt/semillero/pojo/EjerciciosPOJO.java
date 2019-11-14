@@ -16,34 +16,6 @@ public class EjerciciosPOJO {
 	//Mapa que almacenara los respectivos puntajes
 	private Map<String, Integer> marcadores = new HashMap<String, Integer>();
 	
-	//Metodo que carga los respectivos puntajes al mapa
-	public void cargarPuntajes(String nombreJugador, int puntaje) {
-		marcadores.put(nombreJugador, puntaje);
-	}
-	
-	//Metodo que realiza la validacion del ganador, de acuerdo a los datos ya cargados
-	public String definirGanador() {
-		
-		int puntajeFederer=0;
-		int puntajeThiem=0;
-		
-		//For para iterar sobre el mapa
-		for (Map.Entry<String, Integer> entry : marcadores.entrySet()) {
-			
-			if (entry.getKey().equals("Roger Federer")) {
-				puntajeFederer = puntajeFederer + entry.getValue();
-			}
-			else if (entry.getKey().equals("Dominic Thiem")) {
-				puntajeThiem = puntajeThiem + entry.getValue();
-			}
-		}
-		if (puntajeFederer>puntajeThiem) {
-			return "Gano el jugador Federer";
-		}
-		else {
-			return "Gano el jugador Dominic";
-		}
-	}
 	
 	
 	public boolean validarPrimos(int numero) {
@@ -81,11 +53,61 @@ public class EjerciciosPOJO {
 		//Se hace uso de la clase Collections
 		Collections.sort(this.numeros);
 	}
-
 	
 	//Metodo que obtiene el array
-	public ArrayList<Integer> getNumeros() {
-		return numeros;
+		public ArrayList<Integer> getNumeros() {
+			return numeros;
+		}
+		
+	//Metodo que carga los respectivos puntajes al mapa
+		public void cargarPuntajes(String nombreJugador, int puntaje) {
+			marcadores.put(nombreJugador, puntaje);
+		}
+		
+		//Metodo que realiza la validacion del ganador, de acuerdo a los datos ya cargados
+		public String definirGanador() {
+			
+			int puntajeFederer=0;
+			int puntajeThiem=0;
+			
+			//For para iterar sobre el mapa
+			for (Map.Entry<String, Integer> entry : marcadores.entrySet()) {
+				
+				if (entry.getKey().equals("Roger Federer")) {
+					puntajeFederer = puntajeFederer + entry.getValue();
+				}
+				else if (entry.getKey().equals("Dominic Thiem")) {
+					puntajeThiem = puntajeThiem + entry.getValue();
+				}
+			}
+			if (puntajeFederer>puntajeThiem) {
+				return "Gano el jugador Federer";
+			}
+			else {
+				return "Gano el jugador Dominic";
+			}
+		}
+	//Metodo que  optimiza el numero de monedas que se deben dar como cambio	
+	public String devolverCambio(Integer cambio) {
+		
+		Integer residuo=0;
+		Integer monedasMil=0;
+		Integer monedasQuin=0;
+		Integer monedasDos=0;
+		Integer monedasCien=0;
+		Integer monedasCinCu=0;
+		
+		while (cambio!=0) {
+			if (cambio >= 1000) {
+				residuo = cambio % 1000;
+			}
+		}
+		return "";
+	}
+	//Linea 7, se completa con b 
+	// Linea 8 se completa con D
+	public void ejercicioNueve() throws Exception {
+		throw new Exception();
 	}
 	
 	

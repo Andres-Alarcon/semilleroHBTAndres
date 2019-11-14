@@ -95,7 +95,6 @@ public class EjerciciosPOJOTest {
 		ep.cargarPuntajes("Roger Federer", 2);
 		ep.cargarPuntajes("Dominic Thiem", 6);
 		
-		
 		Assert.assertEquals(ep.definirGanador(), "Gano el jugador Dominic");
 	}
 }
