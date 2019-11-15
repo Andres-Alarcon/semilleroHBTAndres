@@ -97,4 +97,13 @@ public class EjerciciosPOJOTest {
 		
 		Assert.assertEquals(ep.definirGanador(), "Gano el jugador Dominic");
 	}
+	//Metodo que prueba que un numero satisfaga la secuencia dada
+	@Test public void ejercicioOnce() {
+		//Se cargan los valores
+		ep.getSecuencia().add(23);
+		ep.getSecuencia().add(33);
+		ep.getSecuencia().add(25);
+		ep.getSecuencia().add(80);
+		ep.getSecuencia().add(36);
+	}
 }

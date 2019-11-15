@@ -92,6 +92,36 @@ export class GestionarComicComponent implements OnInit {
     }
 
     /**
+     * Metodo que permite consultar un comic de la tabla y sus detalles e inhabilitar el formulario
+     * @param posicion en la lista del comic seleccionado
+     */
+    public consultarComic(posicion : number) : void {
+        let comic = this.listaComics[posicion];
+        this.gestionarComicForm.controls.nombre.setValue(comic.nombre);
+        this.gestionarComicForm.controls.editorial.setValue(comic.editorial);
+        this.gestionarComicForm.controls.tematica.setValue(comic.tematica);
+        this.gestionarComicForm.controls.coleccion.setValue(comic.coleccion);
+        this.gestionarComicForm.controls.numeroPaginas.setValue(comic.numeroPaginas);
+        this.gestionarComicForm.controls.precio.setValue(comic.precio);
+        this.gestionarComicForm.controls.autores.setValue(comic.autores);
+        this.gestionarComicForm.controls.color.setValue(comic.color);
+        this.gestionarComicForm.controls.nombre.disable();
+        this.gestionarComicForm.controls.editorial.disable();
+        this.gestionarComicForm.controls.tematica.disable();
+        this.gestionarComicForm.controls.coleccion.disable();
+        this.gestionarComicForm.controls.numeroPaginas.disable();
+        this.gestionarComicForm.controls.precio.disable();
+        this.gestionarComicForm.controls.autores.disable();
+        this.gestionarComicForm.controls.color.disable();
+//        this.gestionarComicForm.controls.color.enable(); para habilitar el campo
+
+    }
+    /*
+    public editarComic(comic : any) : void {
+        this.router.navigate(['bienvenida',comic]);
+    }
+    */
+    /**
      * Metodo que permite editar un comic de la tabla 
      * @param posicion en la lista del comic seleccionado
      */
@@ -120,14 +150,6 @@ export class GestionarComicComponent implements OnInit {
         this.listaComics = this.listaComics.filter(comic => comic !== comic);
         this.idComic--;
     }
-
-    /*
-    public editarComic(comic : any) : void {
-        this.router.navigate(['bienvenida',comic]);
-    }*/
-    
-    
-
     private limpiarFormulario() : void {
         this.submitted = false;
         this.gestionarComicForm.controls.nombre.setValue(null);

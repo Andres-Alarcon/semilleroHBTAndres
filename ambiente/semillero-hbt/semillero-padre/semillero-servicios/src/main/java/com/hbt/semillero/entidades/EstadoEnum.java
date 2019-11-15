@@ -4,37 +4,43 @@
 package com.hbt.semillero.entidades;
 
 /**
- * <b>Descripción:<b> Esta clase se encarga de representar los dos 
- * posibles estados que maneja un estado de un comic
- * <b>Caso de Uso:<b> 
- * @author Andres Felipe Alarcon Fonseca
+ * <b>Descripción:<b>Clase que determina la enumeracion para representar los
+ * tipos de estados aceptados por un comic
  * 
+ * @author ccastano
+ * @version
  */
 public enum EstadoEnum {
-	ACTIVO ("enum.estado.activo"),
+
+	ACTIVO("enum.estado.activo"), 
 	INACTIVO("enum.estado.inactivo");
-	
-	private String codigoMensaje;
-	
 	/**
-	 * Constructor de la clase.
-	 * @param codigoMensaje
+	 * Atributo que contiene la clave del mensaje para la internacionalizacion
 	 */
-	private EstadoEnum(String codigoMensaje) {
+	private String codigoMensaje;
+
+	/**
+	 * Constructor que recibe como parametro el codigo del mensaje
+	 * 
+	 * @param codigoMensaje, Clave del mensaje para para internacionalizacion
+	 */
+	EstadoEnum(String codigoMensaje) {
 		this.codigoMensaje = codigoMensaje;
 	}
 
 	/**
-	 * Metodo encargado de retornar el valor del atributo codigoMensaje
-	 * @return El codigoMensaje asociado a la clase
+	 * Metodo que retorna el valor del atributo
+	 * 
+	 * @return cadena con el codigo del mensaje
 	 */
 	public String getCodigoMensaje() {
 		return codigoMensaje;
 	}
 
 	/**
-	 * Metodo encargado de modificar el valor del atributo codigoMensaje
-	 * @param codigoMensaje El nuevo codigoMensaje a modificar.
+	 * Metodo que establece el valor del atributo
+	 *
+	 * @param codigoMensaje
 	 */
 	public void setCodigoMensaje(String codigoMensaje) {
 		this.codigoMensaje = codigoMensaje;

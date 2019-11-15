@@ -4,43 +4,49 @@
 package com.hbt.semillero.entidades;
 
 /**
- * <b>Descripción:<b> 
- * <b>Caso de Uso:<b> 
- * @author Andres Felipe Alarcon Fonseca
- * @version 
+ * <b>Descripción:<b> Clase que determina la enumeracion para representar los
+ * tipos de tematica aceptados por un comic
+ * 
+ * @author ccastano
+ * @version
  */
 public enum TematicaEnum {
+
 	AVENTURAS("enum.tematica.aventuras"), 
 	BELICO("enum.tematica.belico"),
-	HUMORISTICO("enum.tematica.humoristico"),
-	DEPORTIVO("enum.tematica.deportivo"),
-	FANTASTICO("enum.tematica.fantastico"),
-	CIENCIA_FICCION("enum.tematica.ciencia_ficcion"),
-	HISTORICO("enum.tematica.historico"),
+	DEPORTIVO("enum.tematica.deportivo"), 
+	FANTASTICO("enum.tematica.fantastico"),  
+	CIENCIA_FICCION("enum.tematica.cienciaficcion"),  
+	HISTORICO("enum.tematica.historico"),  
 	HORROR("enum.tematica.horror");
 	
-	
-	private String codigoMensaje;
-	
 	/**
-	 * Constructor de la clase.
-	 * @param codigoMensaje
+	 * Atributo que contiene la clave del mensaje para la internacionalizacion
 	 */
-	private TematicaEnum(String codigoMensaje) {
+	private String codigoMensaje;
+
+	/**
+	 * Constructor que recibe como parametro el codigo del mensaje
+	 * 
+	 * @param codigoMensaje, Clave del mensaje para para internacionalizacion
+	 */
+	TematicaEnum(String codigoMensaje) {
 		this.codigoMensaje = codigoMensaje;
 	}
 
 	/**
-	 * Metodo encargado de retornar el valor del atributo codigoMensaje
-	 * @return El codigoMensaje asociado a la clase
+	 * Metodo que retorna el valor del atributo
+	 * 
+	 * @return cadena con el codigo del mensaje
 	 */
 	public String getCodigoMensaje() {
 		return codigoMensaje;
 	}
 
 	/**
-	 * Metodo encargado de modificar el valor del atributo codigoMensaje
-	 * @param codigoMensaje El nuevo codigoMensaje a modificar.
+	 * Metodo que establece el valor del atributo
+	 *
+	 * @param codigoMensaje
 	 */
 	public void setCodigoMensaje(String codigoMensaje) {
 		this.codigoMensaje = codigoMensaje;

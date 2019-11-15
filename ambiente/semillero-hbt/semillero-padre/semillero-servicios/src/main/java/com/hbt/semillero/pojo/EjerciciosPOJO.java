@@ -1,10 +1,8 @@
 package com.hbt.semillero.pojo;
 
-import java.lang.reflect.Array;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -16,6 +14,8 @@ public class EjerciciosPOJO {
 	//Mapa que almacenara los respectivos puntajes
 	private Map<String, Integer> marcadores = new HashMap<String, Integer>();
 	
+	//Array para la secuencia
+	private ArrayList<Integer> secuencia = new ArrayList<Integer>();
 	
 	
 	public boolean validarPrimos(int numero) {
@@ -108,6 +108,38 @@ public class EjerciciosPOJO {
 	// Linea 8 se completa con D
 	public void ejercicioNueve() throws Exception {
 		throw new Exception();
+	}
+	
+	//Se carga la secuencia
+	public void cargarDatos(Integer numero) {
+		this.secuencia.add(numero);
+	}
+	
+	//Metodo que valida que le numero que viene por parametro satisfaga la secuencia, la suma de los dos digitos, 
+	//debe incrementar en 1 para la suma siguiente
+	public boolean validarNumeroSiguiente(Integer numero) {
+		
+		// Se parte el numero que llega por parametro
+		String digitoUno = numero.toString().substring(0,1);
+		String digitoDos = numero.toString().substring(1);
+		//Se obtiene el ultimo elemento del array
+		String ultimo = this.secuencia.get(this.secuencia.size()-1).toString();
+		//Se parte este numero
+		String digitoUnoArray = ultimo.substring(0,1);
+		String digitoUDosArray = ultimo.substring(1);
+		//Se realizan las sumas correspondientes
+		Integer sumaParametro = Integer.parseInt(digitoUno) + Integer.parseInt(digitoDos);
+		Integer sumaElementoArray = Integer.parseInt(digitoUnoArray) + Integer.parseInt(digitoUDosArray);
+		//Se valida que se cumpla el valor de incremento
+		if (sumaParametro-sumaElementoArray == 1) {
+			return true;
+		}
+		
+		return false;
+	}
+	
+	public ArrayList<Integer> getSecuencia() {
+		return secuencia;
 	}
 	
 	
