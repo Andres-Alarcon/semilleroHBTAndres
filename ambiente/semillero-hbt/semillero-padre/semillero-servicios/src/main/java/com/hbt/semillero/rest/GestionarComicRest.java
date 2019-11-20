@@ -7,8 +7,10 @@ import java.util.List;
 
 import javax.ejb.EJB;
 import javax.ws.rs.Consumes;
+import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
+import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
@@ -29,7 +31,7 @@ import com.hbt.semillero.ejb.IGestionarComicLocal;
 public class GestionarComicRest {
 
 	/**
-	 * Atriburo que permite gestionar un comic
+	 * Atributo que permite gestionar un comic
 	 */
 	@EJB
 	private IGestionarComicLocal gestionarComicEJB;
@@ -62,7 +64,6 @@ public class GestionarComicRest {
 	@Produces(MediaType.APPLICATION_JSON)
 	public List<ComicDTO> consultarComic() {
 		return gestionarComicEJB.consultarComics();
-
 	}
 
 	/**
@@ -108,7 +109,7 @@ public class GestionarComicRest {
 	 * @param idComic identificador del comic a buscar
 	 * @param nombre nombre nuevo del comic
 	 */
-	@POST
+	@GET
 	@Path("/modificar")
 	@Produces(MediaType.APPLICATION_JSON)
 	public void modificarComic(@QueryParam("idComic") Long idComic, @QueryParam("nombre") String nombre) {
@@ -121,12 +122,14 @@ public class GestionarComicRest {
 	 * 
 	 * @param idComic identificador del comic
 	 */
-	@POST
+	@GET
 	@Path("/eliminar")
 	@Produces(MediaType.APPLICATION_JSON)
 	public void eliminarComic(@QueryParam("idComic") Long idComic) {
+		
 		if (idComic != null) {
-			ComicDTO comicDTO = gestionarComicEJB.consultarComic(idComic.toString());
+			System.out.println("Entra al if de eliminar");
+			gestionarComicEJB.eliminarComic(idComic);
 
 		}
 	}

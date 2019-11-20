@@ -78,8 +78,11 @@
             <div class="col-6">
                 <span></span>
             </div>
-            <div class="col-6 text-right">
-                <button type="button" class="btn btn-primary" (click)="crearActualizarComic()">Crear/Editar</button>
+            <div class="col-3 text-left">
+                <button type="button" class="btn btn-primary" (click)="crearActualizarComic()" >Crear</button>
+            </div>
+            <div class="col-3 text-right">
+                <button type="button" class="btn btn-primary" (click)="editarComic()" >Editar</button>
             </div>
         </div>
 
@@ -109,7 +112,7 @@
                             <td>{{comic.color ? 'Si' : 'No' }}</td>
                             <td>
                                 <i class="fas fa-search 2x ml-1" [routerLink]="['/consultar-comic',comic]" title="Consultar"></i>
-                                <i class="fas fa-pencil-alt 2x ml-1"  (click)="editarComic(i)" title="Editar"></i>
+                                <i class="fas fa-pencil-alt 2x ml-1"  (click)="cargarDatosComic(i)" title="Editar"></i>
                                 <i class="far fa-times-circle 2x ml-1" (click)="borrarComic(i)" title="Eliminar"></i>
                             </td>
                         </tr>

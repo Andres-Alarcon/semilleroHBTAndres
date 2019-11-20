@@ -46,11 +46,11 @@ export class BienvenidaComponent implements OnInit {
     this.comicDTO.autores = "cindyDiego";
     this.comicDTO.color = true;
 
-    
+    /*
     this.ejemploService.crearComic(this.comicDTO).subscribe(respuesta => {
       console.log(respuesta);
     });
-
+    */
    
   }
 
