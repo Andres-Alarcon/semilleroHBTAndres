@@ -45,7 +45,15 @@ public class GestionarProveedorBean implements IGestionarProveedorLocal{
 		// Entidad nueva
 		Proveedor proveedor = convertirProveedorDTOToProveedor(proveedorNuevo);
 		// Se almacena la informacion y se maneja la enidad comic
-		em.persist(proveedor);
+		List<Proveedor> resultados = em.createQuery("SELECT COUNT(p) FROM TC_PROVEEDORES p").getResultList();
+			
+			if (resultados.size() <= 30) {
+				em.persist(proveedor);
+		}
+			else {
+				
+			}
+		
 	}
 
 	@Override
@@ -68,7 +76,7 @@ public class GestionarProveedorBean implements IGestionarProveedorLocal{
 		em.merge(proveedorModificar);
 	}
 	/***
-	 * Metodo que en vez de eliminar el proveedor, cambia su estado
+	 * Metodo que en vez de eliminar el proveedor, cambia su estado	
 	 */
 	@Override
 	@TransactionAttribute(TransactionAttributeType.REQUIRED)
