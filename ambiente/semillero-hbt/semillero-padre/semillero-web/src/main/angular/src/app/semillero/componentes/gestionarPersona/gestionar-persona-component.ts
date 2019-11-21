@@ -149,7 +149,7 @@ export class GestionarPersonaComponent implements OnInit {
     /**
      * Metodo que borra directamente el comic de la tabla
      */
-    public borrarComic(posicion: number):void{
+    public borrarPersona(posicion: number):void{
         let persona = this.listaPersonas[posicion];
         //this.listaComics = this.listaComics.filter(comic => comic !== comic);
         //this.idComic--;
