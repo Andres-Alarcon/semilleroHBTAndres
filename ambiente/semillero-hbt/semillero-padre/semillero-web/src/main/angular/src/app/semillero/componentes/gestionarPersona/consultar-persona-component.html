@@ -1,0 +1,58 @@
+<div class="container">
+        <form [formGroup]="consultarPersonaForm">
+            <h1>Gestionar Persona</h1>
+            <hr>
+    
+            <div class="row">
+                <div class="col-6">
+                    <label for="idPersona">Id:</label>
+                    <input type="text" class="form-control" id="idPersona" formControlName="id"
+                         maxlength="50">
+                    <div *ngIf="submitted && f.nombre.errors">
+                        <span class="text-danger" *ngIf="f.nombre.errors.required">Campo requerido.</span>
+                    </div>
+                </div>
+                <div class="col-6">
+                        <label for="nombrePersona">Nombre:</label>
+                        <input type="text" class="form-control" id="nombrePersona" formControlName="nombre"
+                            [ngClass]="{ 'is-invalid': submitted && f.nombre.errors }" maxlength="50">
+                        <div *ngIf="submitted && f.nombre.errors">
+                            <span class="text-danger" *ngIf="f.nombre.errors.required">Campo requerido.</span>
+                        </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    <div class="form-group">
+                        <label for="tematica">Numero de Identificacion:</label>
+                        <input type="text" class="form-control" id="numIdentificacionPersona" formControlName="identificacion"
+                            [ngClass]="{ 'is-invalid': submitted && f.nombre.errors }" maxlength="50">
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-6">
+                    <span></span>
+                </div>
+                <div class="col-3 text-left">
+                    <button type="button" class="btn btn-primary" (click)="crearPersona()" >Crear</button>
+                </div>
+                <div class="col-3 text-right">
+                    <button type="button" class="btn btn-primary" (click)="editarPersona()" >Editar</button>
+                </div>
+            </div>
+    
+            <br>
+            
+            <div class="row">
+                    <div class="col-6">
+                        <span></span>
+                    </div>
+                    <div class="col-6 text-right">
+                        <button type="button" class="btn btn-primary" (click)="regresar()">Volver</button>
+                    </div>
+                </div>
+        </form>
+    
+    </div>

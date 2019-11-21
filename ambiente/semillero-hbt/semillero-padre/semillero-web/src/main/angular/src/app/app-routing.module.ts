@@ -6,6 +6,7 @@ import { ConsultarComicComponent } from './semillero/componentes/gestionarComic/
 import { GestionarPersonaComponent } from './semillero/componentes/gestionarPersona/gestionar-persona-component';
 import { GestionarProveedorComponent } from './semillero/componentes/gestionarProveedor/gestionar-proveedor-component';
 import { ConsultarProveedorComponent } from './semillero/componentes/gestionarProveedor/consultar-proveedor-component';
+import { ConsultarPersonaComponent } from './semillero/componentes/gestionarPersona/consultar-persona-component.';
 
 const routes: Routes = [
   { path: 'gestionar-comic', component: GestionarComicComponent },
@@ -13,7 +14,8 @@ const routes: Routes = [
   { path: 'consultar-comic', component: ConsultarComicComponent, data : null },
   { path: 'gestionar-persona', component: GestionarPersonaComponent, data : null },
   { path: 'gestionar-proveedor', component: GestionarProveedorComponent, data : null },
-  { path: 'consultar-proveedor', component: ConsultarProveedorComponent, data : null }
+  { path: 'consultar-proveedor', component: ConsultarProveedorComponent, data : null },
+  { path: 'consultar-proveedor', component: ConsultarPersonaComponent, data : null }
 ];
 
 @NgModule({

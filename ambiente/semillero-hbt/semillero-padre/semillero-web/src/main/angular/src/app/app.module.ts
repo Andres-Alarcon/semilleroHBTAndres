@@ -27,6 +27,7 @@ export { ProveedorDTO } from './semillero/dto/proveedor.dto';
 
 import {EjemploService} from './semillero/services/ejemplo.service';
 import {AbstractService} from './semillero/services/template.service';
+import { ConsultarPersonaComponent } from './semillero/componentes/gestionarPersona/consultar-persona-component.';
 
 
 @NgModule({
@@ -39,7 +40,8 @@ import {AbstractService} from './semillero/services/template.service';
     ConsultarComicComponent,
     GestionarPersonaComponent,
     GestionarProveedorComponent,
-    ConsultarProveedorComponent
+    ConsultarProveedorComponent,
+    ConsultarPersonaComponent
   ],
   imports: [
     BrowserModule,
