@@ -44,6 +44,12 @@ export class MenuComponent implements OnInit {
     this.router.navigate(['bienvenida']);
   }
 
+  public navegarGestionarPersona():void{
+    this.router.navigate(['gestionar-persona']);
+  }  
+  public navegarGestionarProveedor():void{
+    this.router.navigate(['gestionar-proveedor']);
+  }
   public navegarGestionarCompra(): void {
     //WIP
   }

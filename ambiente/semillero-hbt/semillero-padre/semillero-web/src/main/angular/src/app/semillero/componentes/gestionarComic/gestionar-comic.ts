@@ -82,9 +82,7 @@ export class GestionarComicComponent implements OnInit {
             console.log(error);
         });
     }
-    /**
-     * @description Metodo que permite validar el formulario y crear o actulizar un comic
-     */
+   
     /**
      * @description Metodo que permite validar el formulario y crear o actulizar un comic
      */

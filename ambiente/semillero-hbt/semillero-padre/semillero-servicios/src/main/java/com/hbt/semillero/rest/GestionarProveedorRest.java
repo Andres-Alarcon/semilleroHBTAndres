@@ -3,7 +3,9 @@ package com.hbt.semillero.rest;
 import java.util.List;
 
 import javax.ejb.EJB;
+import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
+import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
@@ -11,6 +13,7 @@ import javax.ws.rs.core.MediaType;
 
 import com.hbt.semillero.dto.PersonaDTO;
 import com.hbt.semillero.dto.ProveedorDTO;
+import com.hbt.semillero.dto.ResultadoDTO;
 import com.hbt.semillero.ejb.IGestionarProveedorLocal;
 
 /**
@@ -57,5 +60,53 @@ public class GestionarProveedorRest {
 	@Produces(MediaType.APPLICATION_JSON)
 	public List<ProveedorDTO> consultarProveedor() {
 		return gestionarProveedorEJB.consultarProveedores();
+	}
+	/**
+	 * Crea los proveedores en sus diferentes roles dentro del sistema.
+	 * http://localhost:8085/semillero-servicios/rest/GestionarPersona/crearProveedor
+	 * @param proveedorDTO
+	 * @return
+	 */
+	@POST
+	@Path("/crearProveedor")
+	@Produces(MediaType.APPLICATION_JSON)
+	@Consumes(MediaType.APPLICATION_JSON)
+	public ResultadoDTO crearProveedor(ProveedorDTO proveedorDTO) {
+		gestionarProveedorEJB.crearProveedor(proveedorDTO);
+		ResultadoDTO resultadoDTO = new ResultadoDTO(Boolean.TRUE, "Proveedor creado exitosamente");
+		return resultadoDTO;
+	}
+
+	/**
+	 * 
+	 * Metodo encargado de modificar el monto de un proveedor
+	 * http://localhost:8085/semillero-servicios/rest/GestionarComic/modificar?idComic=1&nombre=nuevonombre
+	 * @param idProveedor identificador del proveedor a buscar
+	 * @param monto monto nuevo del proveedor
+	 */
+	@GET
+	@Path("/modificarProveedor")
+	@Produces(MediaType.APPLICATION_JSON)
+	public void modificarProveedor(@QueryParam("idProveedor") Long idProveedor, @QueryParam("monto") Long monto) {
+		
+		gestionarProveedorEJB.modificarProveedor(idProveedor, "", monto, null, null);
+	}
+
+	/**
+	 * 
+	 * Metodo encargado de cambiar de estado a un proveedor
+	 * 
+	 * @param idProveedor identificador del proveedor
+	 */
+	@GET
+	@Path("/eliminar")
+	@Produces(MediaType.APPLICATION_JSON)
+	public void eliminarProveedor(@QueryParam("idProveedor") Long idProveedor) {
+		
+		if (idProveedor != null) {
+			//System.out.println("Entra al if de eliminar");
+			gestionarProveedorEJB.eliminarProveedor(idProveedor);
+
+		}
 	}
 }

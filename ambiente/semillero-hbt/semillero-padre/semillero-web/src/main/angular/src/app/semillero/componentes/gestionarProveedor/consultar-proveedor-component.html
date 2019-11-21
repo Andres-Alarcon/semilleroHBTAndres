@@ -1,0 +1,75 @@
+<div class="container">
+        <form [formGroup]="consultarProveedorForm">
+            <h1>Consultar Proveedor</h1>
+            <hr>
+    
+            <div class="row">
+                <div class="col-6">
+                    <label for="idPersona">Id:</label>
+                    <input type="text" class="form-control" id="idProveedor" formControlName="id" maxlength="50">
+                </div>
+                <div class="col-6">
+                        <label for="nombrePersona">Direccion:</label>
+                        <input type="text" class="form-control" id="direccionProveedor" formControlName="direccion"
+                            maxlength="50">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    <div class="form-group">
+                        <label for="fecha">Fecha de Creacion:</label>
+                        <div class="form-group"> <!-- Date input -->
+                            <input class="form-control" id="date" name="date" placeholder="DD/MM/YYY" type="text" formControlName="fecha">
+                          </div>
+                    </div>
+                </div>
+                <div class="col-6">
+                        <div class="col-6">
+                                <div class="form-group">
+                                    <label for="estado">Estado:</label>
+                                    <select class="form-control" id="estado" formControlName="estado">
+                                        <option value="ACTIVO">ACTIVO</option>
+                                        <option value="INACTIVO">INACTIVO</option>
+                                    </select>
+                                </div>
+                        </div>
+                </div>
+            </div>
+            <div class="row">
+                    <div class="col-6">
+                        <label for="idPersonaProv">Id persona:</label>
+                        <input type="text" class="form-control" id="idPersonaProv" formControlName="idPersona"
+                             maxlength="50">
+                    </div>
+                    <div class="col-6">
+                            <label for="montoProvedor">Monto Credito:</label>
+                            <input type="text" class="form-control" id="montoProveedor" formControlName="monto"
+                                 maxlength="50">
+                    </div>
+                </div>
+            <br>
+            <div class="row">
+                <div class="col-6">
+                    <span></span>
+                </div>
+                <div class="col-3 text-left">
+                    <button type="button" class="btn btn-primary" (click)="crearProveedor()" >Crear</button>
+                </div>
+                <div class="col-3 text-right">
+                    <button type="button" class="btn btn-primary" (click)="editarProveedor()" >Editar</button>
+                </div>
+            </div>
+    
+            <br>
+            
+            <div class="row">
+                    <div class="col-6">
+                        <span></span>
+                    </div>
+                    <div class="col-6 text-right">
+                        <button type="button" class="btn btn-primary" (click)="regresar()">Volver</button>
+                    </div>
+                </div>    
+        </form>
+    
+    </div>

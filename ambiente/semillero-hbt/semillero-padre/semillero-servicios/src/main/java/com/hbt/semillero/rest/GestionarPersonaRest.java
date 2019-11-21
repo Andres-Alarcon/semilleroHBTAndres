@@ -62,7 +62,7 @@ public class GestionarPersonaRest {
 	@GET
 	@Path("/consultarPersonas")
 	@Produces(MediaType.APPLICATION_JSON)
-	public List<PersonaDTO> consultarComic() {
+	public List<PersonaDTO> consultarPersona() {
 		return gestionarPersonaEJB.consultarPersonas();
 	}
 	/**

@@ -1,5 +1,6 @@
 package com.hbt.semillero.ejb;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.ejb.Stateful;
@@ -43,15 +44,28 @@ public class GestionarPersonaBean implements IGestionarPersonaLocal{
 	}
 
 	@Override
+	@TransactionAttribute(TransactionAttributeType.REQUIRED)
 	public void modificarPersona(Long id, String nombre, PersonaDTO personaNueva) {
 		// TODO Auto-generated method stub
-		
+		Persona personaModificar ;
+		if(personaNueva==null) {
+			// Entidad a modificar
+			personaModificar = em.find(Persona.class, id);
+		}else {
+			personaModificar = convertirPersonaDTOToPersona(personaNueva);
+		}
+		personaModificar.setNombre(nombre);
+		em.merge(personaModificar);
 	}
 
 	@Override
+	@TransactionAttribute(TransactionAttributeType.REQUIRED)
 	public void eliminarPersona(Long idPersona) {
 		// TODO Auto-generated method stub
-		
+		Persona personaEliminar = em.find(Persona.class, idPersona);
+		if (personaEliminar != null) {
+			em.remove(personaEliminar);
+		}
 	}
 
 	@Override
@@ -66,9 +80,14 @@ public class GestionarPersonaBean implements IGestionarPersonaLocal{
 	}
 
 	@Override
+	@TransactionAttribute(TransactionAttributeType.NOT_SUPPORTED)
 	public List<PersonaDTO> consultarPersonas() {
-		// TODO Auto-generated method stub
-		return null;
+		List<PersonaDTO> resultadosPersonaDTO = new ArrayList<PersonaDTO>();
+		List<Persona> resultados = em.createQuery("select p from Persona p").getResultList();
+		for (Persona persona:resultados) {
+			resultadosPersonaDTO.add(convertirPersonaToPersonaDTO(persona));
+		}
+		return resultadosPersonaDTO;
 	}
 	/**
 	 * 

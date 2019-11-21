@@ -1,5 +1,6 @@
 package com.hbt.semillero.ejb;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.ejb.Stateful;
@@ -44,15 +45,16 @@ public class GestionarProveedorBean implements IGestionarProveedorLocal{
 		// TODO Auto-generated method stub
 		// Entidad nueva
 		Proveedor proveedor = convertirProveedorDTOToProveedor(proveedorNuevo);
+		em.persist(proveedor);
 		// Se almacena la informacion y se maneja la enidad comic
-		List<Proveedor> resultados = em.createQuery("SELECT COUNT(p) FROM TC_PROVEEDORES p").getResultList();
-			
-			if (resultados.size() <= 30) {
-				em.persist(proveedor);
-		}
-			else {
-				
-			}
+//		List<Proveedor> resultados = em.createQuery("SELECT COUNT(p) FROM TC_PROVEEDORES p").getResultList();
+//			
+//			if (resultados.size() <= 30) {
+//				em.persist(proveedor);
+//		}
+//			else {
+//				
+//			}
 		
 	}
 
@@ -100,6 +102,7 @@ public class GestionarProveedorBean implements IGestionarProveedorLocal{
 			proveedor = new Proveedor();
 			proveedor = em.find(Proveedor.class, Long.parseLong(idProveedor));
 			ProveedorDTO proveedorDTO = convertirProveedorToProveedorDTO(proveedor);
+			
 			//tx.commit();
 			return proveedorDTO;
 //		} catch (Exception ex) {
@@ -110,9 +113,15 @@ public class GestionarProveedorBean implements IGestionarProveedorLocal{
 	}
 
 	@Override
+	@TransactionAttribute(TransactionAttributeType.NOT_SUPPORTED)
 	public List<ProveedorDTO> consultarProveedores() {
 		// TODO Auto-generated method stub
-		return null;
+		List<ProveedorDTO> resultadosProveedorDTO = new ArrayList<ProveedorDTO>();
+		List<Proveedor> resultados = em.createQuery("select pro from Proveedor pro").getResultList();
+		for (Proveedor proveedor:resultados) {
+			resultadosProveedorDTO.add(convertirProveedorToProveedorDTO(proveedor));
+		}
+		return resultadosProveedorDTO;
 	}
 	
 	/**
